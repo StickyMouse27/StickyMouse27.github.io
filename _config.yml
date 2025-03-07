@@ -103,7 +103,10 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: https://github.com/StickyMouse27/StickyMouse27.github.io
+  branch: gh-pages
+  message: 'updated'
 
 # hexo-generator-searchdb
 search:
@@ -112,6 +115,7 @@ search:
   format: html
   limit: 10
 
+# 字数统计
 # hexo-symbols-count-time
 symbols_count_time:
   symbols: true

@@ -69,7 +69,10 @@ index_generator:
 default_category: uncategorized
 category_map:
   技术: tech
+  日常: daily
 tag_map:
+  网络: web
+  ^_^: qwq
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta

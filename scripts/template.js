@@ -1,7 +1,7 @@
+'use strict';
+
 var fs = require("hexo-fs");
 var pathFn = require("path");
-
-'use strict';
 
 var template = function (args) {
     let filename = args[0];

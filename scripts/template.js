@@ -5,7 +5,7 @@ var pathFn = require("path");
 
 var template = function (args) {
     let filename = args[0];
-    let path = pathFn.join(hexo.source_dir, `${filename}.md`);
+    let path = pathFn.join(hexo.source_dir, "templates", `${filename}.md`);
 
     // ONLY MARKDOWN
     // let mdRender = content => hexo.render.renderSync({ text: content, engine: 'markdown' })

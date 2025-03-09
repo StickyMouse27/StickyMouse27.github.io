@@ -1505,7 +1505,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #74225e;
+    background: #b9ffed;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3224,4 +3224,10 @@ header.header {
   .comments {
     padding: 10px 12px;
   }
+}
+.badges>*>img {
+  display: inline;
+}
+.badges>a {
+  border-bottom: 0;
 }

@@ -129,3 +129,10 @@ symbols_count_time:
   awl: 2
   wpm: 300
   suffix: "分钟"
+
+# twikoo
+twikoo:
+  enable: true
+  visitor: true
+  envId: https://fish1000.netlify.app # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+  # region: ap-guangzhou # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填

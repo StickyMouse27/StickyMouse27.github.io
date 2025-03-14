@@ -69,7 +69,7 @@ creative_commons:
   # Available values: big | small
   size: big
   sidebar: true
-  post: true
+  post: false
   # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
   # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
   language: deed.zh-hans
@@ -354,8 +354,8 @@ mobile_layout_economy: true
 
 # Browser header panel color.
 theme_color:
-  light: "#222"
-  dark: "#222"
+  light: "#EF88BE"
+  dark: "#20272B"
 
 # Override browsers' default behavior.
 body_scrollbar:

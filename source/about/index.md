@@ -5,7 +5,7 @@ date: 2025-03-07 16:59:28
 
 {% tpl constructing %}
 
-![shizuku~](https://i0.hdslb.com/bfs/new_dyn/f3fddaf9dbc5fbd16439e26840da8efe650638241.png)
+![shizuku~](../images/shizuku.png)
 
 你好！！欢迎你来到这里~
 

@@ -21,7 +21,7 @@ T ba(T l, T r, bool (*check)(T), bool reverseAns = false)
     T m = 0, ans = 0;
     while (r >= l)
     {
-        m = l >> 1 + r >> 1;
+        m = (l >> 1) + (r >> 1);
 
         // cout<<"l: "<<l<<" r: "<<r<<" m: "<<m<<endl;
 

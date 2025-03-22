@@ -18,7 +18,7 @@ var fs = require("hexo-fs");
 var pathFn = require("path");
 
 var template = function (args) {
-    let filename = ' '.join(args);
+    let filename = args.join(" ");
     let path = pathFn.join(hexo.source_dir, "templates", `${filename}.md`);
 
     return fs.readFile(path).then(content =>

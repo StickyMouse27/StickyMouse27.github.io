@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>大模型的自我组织</title>
+    <url>//archives/2025/06/ai-company/</url>
+    <content><![CDATA[<div class="hexo-template constructing"><div class="note warning"><p><strong>“请、、请您稍等！！就、、就快好了！”鱼干抱住，并企图藏住这个页面，说道。</strong></p>
+<p><span class="mask"><del>（才不是没写完就发出来了</del></span></p>
+<p>此页面正在 <strong>施工中……</strong> ⚠</p>
+<p>您可能会看见 <strong>如下内容</strong> 出现在此页面中：</p>
+<ul>
+<li>一只忘记带安全帽的鱼干（只是是找不到了而已</li>
+<li>一些<strong>杂</strong>物被<strong>鱼</strong>干随意堆放（ <del>简称<strong>杂鱼</strong></del> ~</li>
+<li>一个“此页面正在 <strong>施工中……</strong> 的标志牌⚠”（虽然鱼干不觉得有谁会看见，但万一呢……</li>
+</ul>
+</div></div>
+
+<p>这是我最近花了一天和一个晚上摸的项目。主要是为了复习<span class="mask">（才不是因为忘记了）</span>一下相关接口的用法。</p>
+<p>源码：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1N0aWNreU1vdXNlMjcveW91X2tub3dfaXRfaXNfYWk=">github<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="ai公司"><a href="#ai公司" class="headerlink" title="ai公司"></a>ai公司</h2><p>当我们需要解决复杂问题的时候，可能会发现ai的脑子不够用。</p>
+<p><img data-src="/../images/post_images/ai-simple-structure.svg" alt="ai简单运行结构"></p>
+<p>于是，我们可以将多个ai组织成一个公司，让他们协作完成任务。</p>
+<p>以下是我们的ai公司的组织架构图：</p>
+<p><img data-src="/../images/post_images/ai-company-structure.svg" alt="ai公司组织结构图"></p>
+<p>等等，好像太复杂了！</p>
+<p>让我们进行一些优化：</p>
+<p><img data-src="/../images/post_images/ai-company-structure-start.svg" alt="ai公司组织架构图-初始"></p>
+<p>现在看起来好多了。</p>
+<p>那些优化掉的人总是需要的（毕竟我们砍掉了所有动脉）。</p>
+<p>不过作为一个开始，还是不错的。</p>
+<h2 id="让ai把自己组织起来"><a href="#让ai把自己组织起来" class="headerlink" title="让ai把自己组织起来"></a>让ai把自己组织起来</h2><p>HR负责公司的招聘事务。</p>
+<p>说是招聘，其实是写promts。</p>
+<p>例子：</p>
+<ul>
+<li><strong>USER -&gt; MANAGER:</strong> 帮我用python写一个hello world。</li>
+<li><strong>MANAGER -&gt; HR:</strong> 我司需要一名python开发专家！</li>
+<li><strong>HR -&gt; SYSTEM:</strong> “python 工程师”, 0.0, “【一些提示词……】”</li>
+<li><strong>HR -&gt; MANAGER:</strong> 我招聘了一名python工程师。</li>
+<li><strong>MANAGER -&gt; PYTHON_ENGINEER:</strong> 帮我用python写一个hello world。</li>
+<li><strong>PYTHON_ENGINEER -&gt; MANAGER:</strong> 【代码】</li>
+<li><strong>MANAGER -&gt; USER:</strong> 这是用python写的hello world：【代码】</li>
+</ul>
+<p>这样可以让ai专人干专事。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+        <tag>大语言模型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>问候语…早上好…？</title>
     <url>//archives/2025/03/geetings/</url>
     <content><![CDATA[<div class="hexo-template constructing"><div class="note warning"><p><strong>“请、、请您稍等！！就、、就快好了！”鱼干抱住，并企图藏住这个页面，说道。</strong></p>
@@ -28,6 +77,17 @@
       </categories>
       <tags>
         <tag>^_^</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些有用的c++函数</title>
+    <url>//archives/2025/03/useful-cpp-functions/</url>
+    <content><![CDATA[<h2 id="二分答案"><a href="#二分答案" class="headerlink" title="二分答案"></a>二分答案</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/// @brief 二分答案（闭区间）</span></span><br><span class="line"><span class="comment">/// @tparam T 数字类型</span></span><br><span class="line"><span class="comment">/// @param l 左初始值</span></span><br><span class="line"><span class="comment">/// @param r 右初始值</span></span><br><span class="line"><span class="comment">/// @param check 检查答案在左还是右的函数，若true则向右移动，否则向左移动</span></span><br><span class="line"><span class="comment">/// @param reverseAns 是否反转答案</span></span><br><span class="line"><span class="comment">/// @return 答案</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="type">int</span>&gt;</span><br><span class="line">T <span class="built_in">ba</span>(T l, T r, <span class="built_in">bool</span> (*check)(T), <span class="type">bool</span> reverseAns = <span class="literal">false</span>)</span><br><span class="line">&#123;</span><br><span class="line">    T m = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (r &gt;= l)</span><br><span class="line">    &#123;</span><br><span class="line">        m = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;l: &quot;&lt;&lt;l&lt;&lt;&quot; r: &quot;&lt;&lt;r&lt;&lt;&quot; m: &quot;&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(m))</span><br><span class="line">        &#123;</span><br><span class="line">            ans = reverseAns ? ans : m;</span><br><span class="line">            l = m + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            ans = reverseAns ? m : ans;</span><br><span class="line">            r = m - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// @brief 二分答案（左开右闭，向左寻找）</span></span><br><span class="line"><span class="comment">/// @tparam T 数字类型</span></span><br><span class="line"><span class="comment">/// @param l 左初始值</span></span><br><span class="line"><span class="comment">/// @param r 右初始值</span></span><br><span class="line"><span class="comment">/// @param check 检查答案在左还是右的函数，若true则向右移动，否则向左移动</span></span><br><span class="line"><span class="comment">/// @return 答案</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="type">int</span>&gt;</span><br><span class="line">T <span class="built_in">baL</span>(T l, T r, <span class="built_in">bool</span> (*check)(T))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        T m = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;l: &quot;&lt;&lt;l&lt;&lt;&quot; r: &quot;&lt;&lt;r&lt;&lt;&quot; m: &quot;&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(m))</span><br><span class="line">            l = m + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// @brief 二分答案（左闭右开，向右寻找）</span></span><br><span class="line"><span class="comment">/// @tparam T 数字类型</span></span><br><span class="line"><span class="comment">/// @param l 左初始值</span></span><br><span class="line"><span class="comment">/// @param r 右初始值</span></span><br><span class="line"><span class="comment">/// @param check 检查答案在左还是右的函数，若true则向右移动，否则向左移动</span></span><br><span class="line"><span class="comment">/// @return 答案</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="type">int</span>&gt;</span><br><span class="line">T <span class="built_in">baR</span>(T l, T r, <span class="built_in">bool</span> (*check)(T))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        T m = (l + r + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;l: &quot;&lt;&lt;l&lt;&lt;&quot; r: &quot;&lt;&lt;r&lt;&lt;&quot; m: &quot;&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(m))</span><br><span class="line">            l = m;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = m - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -62,17 +122,6 @@
       </categories>
       <tags>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一些有用的c++函数</title>
-    <url>//archives/2025/03/useful-cpp-functions/</url>
-    <content><![CDATA[<h2 id="二分答案"><a href="#二分答案" class="headerlink" title="二分答案"></a>二分答案</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/// @brief 二分答案（闭区间）</span></span><br><span class="line"><span class="comment">/// @tparam T 数字类型</span></span><br><span class="line"><span class="comment">/// @param l 左初始值</span></span><br><span class="line"><span class="comment">/// @param r 右初始值</span></span><br><span class="line"><span class="comment">/// @param check 检查答案在左还是右的函数，若true则向右移动，否则向左移动</span></span><br><span class="line"><span class="comment">/// @param reverseAns 是否反转答案</span></span><br><span class="line"><span class="comment">/// @return 答案</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="type">int</span>&gt;</span><br><span class="line">T <span class="built_in">ba</span>(T l, T r, <span class="built_in">bool</span> (*check)(T), <span class="type">bool</span> reverseAns = <span class="literal">false</span>)</span><br><span class="line">&#123;</span><br><span class="line">    T m = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (r &gt;= l)</span><br><span class="line">    &#123;</span><br><span class="line">        m = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;l: &quot;&lt;&lt;l&lt;&lt;&quot; r: &quot;&lt;&lt;r&lt;&lt;&quot; m: &quot;&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(m))</span><br><span class="line">        &#123;</span><br><span class="line">            ans = reverseAns ? ans : m;</span><br><span class="line">            l = m + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            ans = reverseAns ? m : ans;</span><br><span class="line">            r = m - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// @brief 二分答案（左开右闭，向左寻找）</span></span><br><span class="line"><span class="comment">/// @tparam T 数字类型</span></span><br><span class="line"><span class="comment">/// @param l 左初始值</span></span><br><span class="line"><span class="comment">/// @param r 右初始值</span></span><br><span class="line"><span class="comment">/// @param check 检查答案在左还是右的函数，若true则向右移动，否则向左移动</span></span><br><span class="line"><span class="comment">/// @return 答案</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="type">int</span>&gt;</span><br><span class="line">T <span class="built_in">baL</span>(T l, T r, <span class="built_in">bool</span> (*check)(T))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        T m = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;l: &quot;&lt;&lt;l&lt;&lt;&quot; r: &quot;&lt;&lt;r&lt;&lt;&quot; m: &quot;&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(m))</span><br><span class="line">            l = m + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// @brief 二分答案（左闭右开，向右寻找）</span></span><br><span class="line"><span class="comment">/// @tparam T 数字类型</span></span><br><span class="line"><span class="comment">/// @param l 左初始值</span></span><br><span class="line"><span class="comment">/// @param r 右初始值</span></span><br><span class="line"><span class="comment">/// @param check 检查答案在左还是右的函数，若true则向右移动，否则向左移动</span></span><br><span class="line"><span class="comment">/// @return 答案</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="type">int</span>&gt;</span><br><span class="line">T <span class="built_in">baR</span>(T l, T r, <span class="built_in">bool</span> (*check)(T))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        T m = (l + r + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// cout&lt;&lt;&quot;l: &quot;&lt;&lt;l&lt;&lt;&quot; r: &quot;&lt;&lt;r&lt;&lt;&quot; m: &quot;&lt;&lt;m&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(m))</span><br><span class="line">            l = m;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = m - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
       </tags>
   </entry>
 </search>

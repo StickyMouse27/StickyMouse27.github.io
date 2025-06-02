@@ -73,6 +73,8 @@ category_map:
 tag_map:
   网络: web
   ^_^: qwq
+  大语言模型: llm
+  人工智能: ai
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta

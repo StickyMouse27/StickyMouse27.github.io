@@ -52,7 +52,7 @@ darkmode: true
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon/32x32.png
+  small: /images/fish.png
   medium: /images/fish.png
   # apple_touch_icon: /images/apple-touch-icon-next.png
   # safari_pinned_tab: /images/logo.svg

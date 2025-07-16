@@ -9,7 +9,7 @@ categories:
 
 ## 问题描述：
 
-进入VS Code，进入“Python: 选择Python解释器”，创建或选择.venv虚拟环境，打开终端，运行`pip --version`，发现此时pip位置处于全局环境下。手动激活虚拟环境，再运行`pip --version`，此时pip位置正确。
+最近，进入VS Code，进入“Python: 选择Python解释器”后，创建或选择.venv虚拟环境，打开终端，运行`pip --version`，发现此时pip位置处于全局环境下。手动激活虚拟环境，再运行`pip --version`，此时pip位置正确。
 
 ## 应该是怎样的？
 
@@ -17,15 +17,18 @@ categories:
 
 ## 解决办法：
 
+1. 下载Python Environments（`ms-python.vscode-python-envs`）扩展。
+2. 在settings.json中添加`"python.useEnvironmentsExtension": true`
+
 参考：
 
 [Terminal no longer auto-activating #25291](https://github.com/microsoft/vscode-python/issues/25291)
 
-> You may now see that when you open a new terminal, it does not auto-activate the python environment in this terminal.
+> **You may now see that when you open a new terminal, it does not auto-activate the python environment in this terminal.**
 >
 > This issue includes information and resolution to this problem:
 >
-> We have decided to turn off the experiment "pythonTerminalEnvVarActivation" on VS Code Insiders. (It is still enabled for users on VS Code stable in the interim) This experiment was created a while back to implement auto-terminal activation, but proved to be buggy and highlighted that this approach is difficult to get right for every user. We are now moving over fully to the Python Environments extension as our long-term solution to all environment related tasks. This new extension will work hand in hand with the Python extension to provide a very much improved experience. Learn more about our roll out of this extension by default to Python users here.
+> **We have decided to turn off the experiment "pythonTerminalEnvVarActivation"** on VS Code Insiders. (It is still enabled for users on VS Code stable in the interim) This experiment was created a while back to implement auto-terminal activation, but proved to be buggy and highlighted that this approach is difficult to get right for every user. We are now moving over fully to the Python Environments extension as our long-term solution to all environment related tasks. This new extension will work hand in hand with the Python extension to provide a very much improved experience. Learn more about our roll out of this extension by default to Python users [here](https://github.com/microsoft/vscode-python-environments/issues/581).
 >
 > With this in mind, these are the steps to get back environment auto-activation upon opening a terminal:
 >

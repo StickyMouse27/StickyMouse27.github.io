@@ -237,7 +237,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-07-17 01:19:20 / 修改时间：01:34:34" itemprop="dateCreated datePublished" datetime="2025-07-17T01:19:20+08:00">2025-07-17</time>
+      <time title="创建时间：2025-07-17 01:19:20 / 修改时间：01:53:09" itemprop="dateCreated datePublished" datetime="2025-07-17T01:19:20+08:00">2025-07-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>374</span>
+      <span>396</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -282,14 +282,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>进入VS Code，进入“Python: 选择Python解释器”，创建或选择.venv虚拟环境，打开终端，运行<code>pip --version</code>，发现此时pip位置处于全局环境下。手动激活虚拟环境，再运行<code>pip --version</code>，此时pip位置正确。</p>
+          <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>最近，进入VS Code，进入“Python: 选择Python解释器”后，创建或选择.venv虚拟环境，打开终端，运行<code>pip --version</code>，发现此时pip位置处于全局环境下。手动激活虚拟环境，再运行<code>pip --version</code>，此时pip位置正确。</p>
 <h2 id="应该是怎样的？"><a href="#应该是怎样的？" class="headerlink" title="应该是怎样的？"></a>应该是怎样的？</h2><p>打开终端时，应该自动进入虚拟环境。</p>
-<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>参考：</p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><ol>
+<li>下载Python Environments（<code>ms-python.vscode-python-envs</code>）扩展。</li>
+<li>在settings.json中添加<code>&quot;python.useEnvironmentsExtension&quot;: true</code></li>
+</ol>
+<p>参考：</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21pY3Jvc29mdC92c2NvZGUtcHl0aG9uL2lzc3Vlcy8yNTI5MQ==">Terminal no longer auto-activating #25291<i class="fa fa-external-link-alt"></i></span></p>
 <blockquote>
-<p>You may now see that when you open a new terminal, it does not auto-activate the python environment in this terminal.</p>
+<p><strong>You may now see that when you open a new terminal, it does not auto-activate the python environment in this terminal.</strong></p>
 <p>This issue includes information and resolution to this problem:</p>
-<p>We have decided to turn off the experiment “pythonTerminalEnvVarActivation” on VS Code Insiders. (It is still enabled for users on VS Code stable in the interim) This experiment was created a while back to implement auto-terminal activation, but proved to be buggy and highlighted that this approach is difficult to get right for every user. We are now moving over fully to the Python Environments extension as our long-term solution to all environment related tasks. This new extension will work hand in hand with the Python extension to provide a very much improved experience. Learn more about our roll out of this extension by default to Python users here.</p>
+<p><strong>We have decided to turn off the experiment “pythonTerminalEnvVarActivation”</strong> on VS Code Insiders. (It is still enabled for users on VS Code stable in the interim) This experiment was created a while back to implement auto-terminal activation, but proved to be buggy and highlighted that this approach is difficult to get right for every user. We are now moving over fully to the Python Environments extension as our long-term solution to all environment related tasks. This new extension will work hand in hand with the Python extension to provide a very much improved experience. Learn more about our roll out of this extension by default to Python users <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21pY3Jvc29mdC92c2NvZGUtcHl0aG9uLWVudmlyb25tZW50cy9pc3N1ZXMvNTgx">here<i class="fa fa-external-link-alt"></i></span>.</p>
 <p>With this in mind, these are the steps to get back environment auto-activation upon opening a terminal:</p>
 <ol>
 <li>Install the Python Environments Extension (published by Microsoft): <span class="exturl" data-url="aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPW1zLXB5dGhvbi52c2NvZGUtcHl0aG9uLWVudnM=">https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs<i class="fa fa-external-link-alt"></i></span></li>
